@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "xo && ava -v",
-    "dev": "concurrently --names \"main,webpack,ava,xo\" \"electron -r babel-register .\" \"webpack --mode=\"development\" --watch\" \"ava --verbose --watch\" \"onchange '*.js' -i -- xo\"",
+    "dev": "concurrently -k --names \"main,webpack,ava,xo\" \"electron -r babel-register .\" \"webpack --mode=\"development\" --watch\" \"ava --verbose --watch\" \"onchange '*.js' -i -- xo\"",
     "build": "webpack --mode=\"production\"",
-    "start": "babel-node index.js"
+    "start": "electron -r babel-register ."
   },
   "repository": {
     "type": "git",
