@@ -1,8 +1,9 @@
-import electron, {BrowserWindow} from 'electron';
-import path from 'path';
-import url from 'url';
-
+const electron = require('electron');
 const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+const path = require('path');
+const url = require('url');
+
 let mainWindow;
 
 function createWindow() {
@@ -13,6 +14,8 @@ function createWindow() {
 		protocol: 'file:',
 		slashes: true
 	}));
+
+	mainWindow.openDevTools();
 
 	mainWindow.on('closed', () => {
 		mainWindow = null;

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "xo && ava -v",
     "dev": "concurrently -k --names \"main,webpack,ava,xo\" \"electron -r babel-register .\" \"webpack --mode=\"development\" --watch\" \"ava --verbose --watch\" \"onchange '*.js' -i -- xo\"",
-    "build": "webpack --mode=\"production\"",
+    "build": "rm -rf dist ; rm -rf build ;  webpack --mode=\"production\" && electron-packager . --overwrite --out build -r babel-register",
     "start": "electron -r babel-register ."
   },
   "repository": {
@@ -26,6 +26,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "css-loader": "^0.28.11",
+    "electron-packager": "^12.0.1",
     "eslint-config-xo-react": "^0.16.0",
     "eslint-plugin-react": "^7.7.0",
     "style-loader": "^0.20.3",
