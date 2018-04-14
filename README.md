@@ -14,5 +14,6 @@ npm install
 
 # usage
 npm run dev # starts webpack in watch mode, starts electron and starts xo and ava in watch mode
-npm run build && npm test && npm start # builds files, runs tests and electron app
+npm run build # packages files for current OS to build/
+npm run build-all # packages files for all OSes to build/
 ```
